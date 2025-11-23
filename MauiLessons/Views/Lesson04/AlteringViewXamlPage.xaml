@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson04.AlteringViewXamlPage"
+             Padding="5"
+             Title="Altering View Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Label that changes appearance -->
+        <Label x:Name="label"
+               Text="TEXT"
+               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <!-- Switch and identifying Label for Visibility -->
+        <Switch x:Name="visibleSwitch"
+                BindingContext="{x:Reference label}"
+                IsToggled="{Binding IsVisible}" 
+                Grid.Row="1" Grid.Column="0"
+                Margin="20,0,0,0" />
+        <Label  BindingContext="{x:Reference visibleSwitch}"
+                Text="{Binding IsToggled, StringFormat='Is Visible = {0}'}"
+                Grid.Row="1" Grid.Column="1"
+                VerticalTextAlignment="Center" />
+
+        <!-- Radio button group and identifying Label for Enabling 
+             Not that the bining is easiest made in C# code as RadioButton is complex-->
+        <StackLayout x:Name ="enabledRadio " RadioButtonGroup.GroupName="EnableLabel"
+                     Grid.Row="2" Grid.Column="0"
+                Margin="20,0,0,0">
+            <Label Text="Enabled the Label" />
+            <RadioButton Content="Enabled" CheckedChanged="RadioButton_CheckedChanged"  
+                 Value="Enabled" IsChecked="True"/>
+            <RadioButton Content="Disabled" CheckedChanged="RadioButton_CheckedChanged"
+                 Value="Disabled" />
+        </StackLayout>
+        <Label  x:Name ="enabledLabel"
+                Grid.Row="2" Grid.Column="1"
+                VerticalTextAlignment="Center" />
+
+        <!-- Slider and identifying Label for Scaling -->
+        <Slider x:Name="scaleSlider"
+                BindingContext="{x:Reference label}"
+                Grid.Row="3" Grid.Column="0"
+                Maximum="10"
+                Value="{Binding Scale}" 
+                Margin="20,0,0,0" />
+        <Label BindingContext="{x:Reference scaleSlider}"
+               Text="{Binding Value, StringFormat='Scale = {0:F1}'}"
+               Grid.Row="3" Grid.Column="1"
+               VerticalTextAlignment="Center" />
+
+        <!-- Slider and identifying Label for Rotation -->
+        <Slider x:Name="rotationSlider"
+                BindingContext="{x:Reference label}"
+                Grid.Row="4" Grid.Column="0"
+                Maximum="360"
+                Value="{Binding Rotation}" 
+                Margin="20,0,0,0" />
+        <Label BindingContext="{x:Reference rotationSlider}"
+               Text="{Binding Value, StringFormat='Rotation = {0:F0}'}"
+               Grid.Row="4" Grid.Column="1"
+               VerticalTextAlignment="Center" />
+
+        <!-- Slider and identifying Label for RotationX -->
+        <Slider x:Name="rotationXSlider"
+                BindingContext="{x:Reference label}"
+                Grid.Row="5" Grid.Column="0"
+                Maximum="360"
+                Value="{Binding RotationX}"
+                Margin="20,0,0,0" />
+        <Label BindingContext="{x:Reference rotationXSlider}"
+               Text="{Binding Value, StringFormat='RotationX = {0:F0}'}"
+               Grid.Row="5" Grid.Column="1"
+               VerticalTextAlignment="Center" />
+
+        <!-- Slider and identifying Label for RotationY -->
+        <Slider x:Name="rotationYSlider"
+                BindingContext="{x:Reference label}"
+                Grid.Row="6" Grid.Column="0"
+                Maximum="360"
+                Value="{Binding RotationY}"
+                Margin="20,0,0,0" />
+        <Label BindingContext="{x:Reference rotationYSlider}"
+               Text="{Binding Value, StringFormat='RotationY = {0:F0}'}"
+               Grid.Row="6" Grid.Column="1"
+               VerticalTextAlignment="Center" />
+    </Grid>
+</ContentPage>

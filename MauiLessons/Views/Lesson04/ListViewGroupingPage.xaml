@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson04.ListViewGroupingPage"
+             Title="ListView Grouping">
+    <StackLayout>
+        <Label Text="ListView"
+               FontSize="50"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        
+        <!-- This is an alternativ when binding ListView.ItemSource using default Binding Context
+        <ListView Margin="10, 0" x:Name="lvFriends" Header="My friends" Footer="That's it" ItemsSource="{Binding .}">
+        -->
+
+        <ListView Margin="10, 0" x:Name="lvFriends" Header="My friends" Footer="That's it" IsGroupingEnabled="True" 
+                  ItemSelected="lvFriends_ItemSelected">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="BlanchedAlmond">
+                        <Label FontSize="20" Text="{Binding Key, StringFormat='Born year {0}'}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Invite to party" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Send a gift" Clicked="MenuItem_Clicked_1"  CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="0, 5"
+                                     Orientation="Horizontal" 
+                                     Spacing="6">
+                            <Button Text="Say Hello" Clicked="Button_Clicked" CommandParameter="{Binding .}"/>
+                            <BoxView Color="{Binding FavoriteColor.Color}"
+                                     HeightRequest="60" 
+                                     WidthRequest="60" />
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding FullName}" />
+                                <Label Text="{Binding Birthday, StringFormat='Born {0:d}'}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

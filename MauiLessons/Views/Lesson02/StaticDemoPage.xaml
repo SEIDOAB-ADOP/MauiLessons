@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             xmlns:consts="clr-namespace:MauiLessons.Globals"
+             xmlns:device="clr-namespace:Microsoft.Maui.Devices;assembly=Microsoft.Maui.Essentials"
+             x:Class="MauiLessons.Views.Lesson02.StaticDemoPage"
+             Title="x:Static Demo">
+    <StackLayout Margin="10, 0">
+        <Label>
+            <Label.Text>
+                <x:Static Member="consts:AppConstants.NormalFontSize" />
+            </Label.Text>
+            <Label.FontSize>
+                <x:StaticExtension Member="consts:AppConstants.NormalFontSize" />
+            </Label.FontSize>
+        </Label>
+        <Label Text="{x:Static consts:AppConstants.Platform}">
+            <Label.FontSize>
+                <x:Static Member="consts:AppConstants.NormalFontSize" />
+            </Label.FontSize>
+        </Label>
+        <Label Text="{x:Static consts:AppConstants.Idiom}"
+               FontSize="{x:StaticExtension Member=consts:AppConstants.NormalFontSize}" />
+        <Label Text="Label No. 5"
+               FontSize="{x:Static consts:AppConstants.NormalFontSize}" />
+        <Label Text="&#x03C0; &#x00D7; E sized text"
+               FontSize="{x:Static sys:Math.PI}"
+               Scale="{x:Static sys:Math.E}" 
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

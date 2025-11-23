@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson05.Prompts"
+             Title="Display a Prompt">
+    <ContentPage.Content>
+        <StackLayout Spacing="50">
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Data passed to page using IDictionary:" HorizontalOptions="Center"/>
+                <Label x:Name="lblMessage" HorizontalOptions="Center" />
+                <Label x:Name="lblTime" HorizontalOptions="Center" />
+            </StackLayout>
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4">
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Display Prompt" FontSize="Large" HorizontalOptions="Center" />
+                    <Label x:Name="lblAnswer" />
+                    <Button Text="Question 1" Clicked="OnQuestion1ButtonClicked" />
+                    <Button Text="Question 2" Clicked="OnQuestion2ButtonClicked" />
+                </StackLayout>
+            </Border>
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4" BackgroundColor="LightGrey">
+                <StackLayout VerticalOptions="End">
+                    <Button Text="Alerts" Clicked="Button_Clicked_1" />
+                    <Button Text="Menu" Clicked="Button_Clicked_2" />
+                </StackLayout>
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

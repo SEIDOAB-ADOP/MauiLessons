@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson04.ApplicationState"
+             Title="Passing Data in Shell">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Global data:" FontAttributes="Bold"/>
+                <Label x:Name ="globalMessage"/>
+                <Label x:Name ="globalTime"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Application static properties:" FontAttributes="Bold"/>
+                <Label x:Name ="appPropMessage"/>
+                <Label x:Name ="appPropTime"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Preference Dictionary:" FontAttributes="Bold"/>
+                <Label x:Name ="prefMessage"/>
+                <Label x:Name ="prefTime"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

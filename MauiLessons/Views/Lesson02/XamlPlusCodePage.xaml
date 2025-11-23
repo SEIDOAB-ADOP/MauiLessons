@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson02.XamlPlusCodePage"
+             Title="XAML + Code Page">
+    <StackLayout>
+        <StackLayout.BackgroundColor>
+            <OnPlatform x:TypeArguments="Color">
+                <On Platform="WinUI" Value="Red"/>
+                <On Platform="Default" Value="Blue"/>
+            </OnPlatform>
+        </StackLayout.BackgroundColor>
+        <Slider VerticalOptions="Center"
+                ValueChanged="OnSliderValueChanged" 
+                Margin="20,0,20,0" />
+        <Label x:Name="valueLabel"
+               Text="A simple Label">
+            <Label.FontSize>
+                   20
+                 </Label.FontSize>
+            <Label.HorizontalOptions>
+                Center
+            </Label.HorizontalOptions>
+            <Label.VerticalOptions>
+                Center
+            </Label.VerticalOptions>
+        </Label>
+        <Button Text="Click Me!"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnButtonClicked" />
+    </StackLayout>
+</ContentPage>

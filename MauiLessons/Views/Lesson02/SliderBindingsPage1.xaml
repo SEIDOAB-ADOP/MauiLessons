@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson02.SliderBindingsPage1"
+             Title="Slider Bindings Page">
+    <StackLayout Padding="10, 0">
+        <Label Text="Label with basic binding in XAML"
+               FontSize="30"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               Rotation="{Binding Source={x:Reference Name=slider1a}, Path=Value}"
+               Scale="{Binding Source={x:Reference Name=slider1b}, Path=Value}"
+               Opacity="{Binding Source={x:Reference Name=slider1c}, Path=Value}"/>
+
+        <Slider x:Name="slider1a"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand" />
+        <Slider x:Name="slider1b"
+                Maximum="1"
+                VerticalOptions="CenterAndExpand" Value="1"/>
+        <Slider x:Name="slider1c"
+                Maximum="1"
+                VerticalOptions="CenterAndExpand" Value="1" />
+
+        <Label x:Name="label2" Text="Label with basic binding in C#"
+               FontSize="30"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
+
+        <Slider x:Name="slider2a"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand" />
+        <Slider x:Name="slider2b"
+                Maximum="1"
+                VerticalOptions="CenterAndExpand" Value="1"/>
+        <Slider x:Name="slider2c"
+                Maximum="1"
+                VerticalOptions="CenterAndExpand" Value="1" />
+
+    </StackLayout>
+</ContentPage>

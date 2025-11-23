@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLessons.Views.Lesson05.Actions"
+             Title="Open an Actions Sheet">
+    <ContentPage.Content>
+        <StackLayout Spacing="50">
+            <StackLayout VerticalOptions="Start">
+                <Label Text="Global data:" HorizontalOptions="Center"/>
+                <Label Text="{Binding message}" HorizontalOptions="Center" />
+                <Label Text="{Binding time}" HorizontalOptions="Center" />
+            </StackLayout>
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4">
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Action Sheet" FontSize="Large" HorizontalOptions="Center" />
+                    <Label x:Name="lblAnswer" Text="Action Answer"/>
+                    <Button Text="ActionSheet Simple" Clicked="OnActionSheetSimpleClicked" />
+                    <Button Text="ActionSheet Cancel/Delete" Clicked="OnActionSheetCancelDeleteClicked" />
+                </StackLayout>
+            </Border>
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4" BackgroundColor="LightGrey">
+                <StackLayout VerticalOptions="End">
+                    <Button Text="Alerts" Clicked="Button_Clicked" />
+                    <Button Text="Menu" Clicked="Button_Clicked_1" />
+                </StackLayout>
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

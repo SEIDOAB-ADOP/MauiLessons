@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiLessons.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiLessons"
+    xmlns:views="clr-namespace:MauiLessons.Views"
+    Shell.FlyoutBehavior="Flyout" 
+    Title="ADOP MAUI Lessons">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="home" />
+    
+    <ShellContent
+    Title="Lesson 2"
+    ContentTemplate="{DataTemplate views:Lesson02a}"
+    Route="lesson2" />
+    
+    <ShellContent
+    Title="Lesson 3"
+    ContentTemplate="{DataTemplate views:Lesson03a}"
+    Route="lesson3" />
+    
+    <FlyoutItem x:Name="flyLesson04" Title="Lesson 4">
+        <ShellContent
+                Title="Lesson 4"
+                ContentTemplate="{DataTemplate views:Lesson04a}"
+                Route="lesson4" />
+    </FlyoutItem>
+    <FlyoutItem x:Name="flyLesson05" Title="Lesson 5" Route="lesson5">
+        <Tab Title="Hierarchial navigation">
+        <ShellContent
+                Title="Hierarchial navigation"
+                ContentTemplate="{DataTemplate views:Lesson05a}"
+                Route="hierachial1" />
+        </Tab>
+        <Tab Title="Hierarchial navigation">
+            <ShellContent
+                Title="Hierarchial navigation"
+                ContentTemplate="{DataTemplate views:Lesson05a}"
+                Route="hierachial2" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem x:Name="flyLesson06" Title="Lesson 6" Route="lesson6">
+        <Tab Title="ActivityIndicator and ProgressBar">
+            <ShellContent
+                Title="ActivityIndicator and ProgressBar"
+                ContentTemplate="{DataTemplate views:Lesson06a}"
+                Route="indicators" />
+        </Tab>
+        <Tab Title="Non trivial Databinding">
+            <ShellContent
+                Title="Non trivial Databinding"
+                ContentTemplate="{DataTemplate views:Lesson06b}"
+                Route="nontrivialbinding" />
+        </Tab>
+        <Tab Title="Viewmodel using Command">
+            <ShellContent
+                Title="Viewmodel using Command"
+                ContentTemplate="{DataTemplate views:Lesson06c}"
+                Route="viewmodels" />
+        </Tab>
+    </FlyoutItem>
+    <ShellContent
+    Title="Lesson 7"
+    ContentTemplate="{DataTemplate views:Lesson07a}"
+    Route="lesson7" />
+
+</Shell>

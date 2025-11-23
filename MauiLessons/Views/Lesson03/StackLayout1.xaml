@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="MauiLessons.Views.Lesson03.StackLayout1"
+Title="StackLayout Demo - XAML"
+             Padding="10,10,10,10">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <BoxView Color="Yellow" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+
+            <!-- Play around with HeightRequest="100" -->
+            <StackLayout>
+
+                <!-- Play around with VerticalOptions="FillAndExpand" -->
+                <BoxView Color="Blue" HorizontalOptions="FillAndExpand" />
+                <BoxView Color="Aqua" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <!-- Play around with VerticalOptions="FillAndExpand" -->
+            <BoxView Color="Bisque" />
+
+            <!-- Play around with HeightRequest="200" -->
+            <StackLayout Orientation="Horizontal">
+
+                <!-- Play around with HeightRequest="50" WidthRequest="100" HorizontalOptions="Start" -->
+                <StackLayout Orientation="Vertical" WidthRequest="400">
+                    <BoxView Color="DarkSalmon"  />
+                    <BoxView Color="LightCoral" />
+                    <BoxView Color="Fuchsia" />
+                </StackLayout>
+
+                <!-- Play around with HeightRequest="100" HorizontalOptions="FillAndExpand" -->
+                <BoxView Color="LightBlue" />
+                <BoxView Color="LightPink" />
+                <BoxView Color="SaddleBrown" />
+                <BoxView Color="DeepPink" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

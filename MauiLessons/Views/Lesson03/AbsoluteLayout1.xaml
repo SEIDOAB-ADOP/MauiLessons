@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="MauiLessons.Views.Lesson03.AbsoluteLayout1"
+Title="Absolute Layout Exploration - XAML">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label Text="I'm at top center on every device. H, W fixed" AbsoluteLayout.LayoutBounds="0.5, 0.1, 500, 50" 
+                   AbsoluteLayout.LayoutFlags="PositionProportional" FontSize="20" HorizontalOptions="Center" LineBreakMode="WordWrap"  />
+            <Label Text="I'm bottom center on every device. H, W variable" AbsoluteLayout.LayoutBounds="0.5,1,0.7,0.05" 
+                   AbsoluteLayout.LayoutFlags="All" FontSize="20" HorizontalOptions="Center" LineBreakMode="WordWrap"  />
+            <BoxView Color="Bisque"  AbsoluteLayout.LayoutBounds="1,0.5, 25, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <BoxView Color="Red" AbsoluteLayout.LayoutBounds="0,0.5,25,100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="0.5,0,100,25" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+
+</ContentPage>
