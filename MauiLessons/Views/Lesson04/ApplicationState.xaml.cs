@@ -13,6 +13,11 @@ namespace MauiLessons.Views.Lesson04
         public ApplicationState()
 		{
 			InitializeComponent();
+            var b1 = Global.Data.Friends.IsValueCreated;
+            var b2 = Global.Data.NamedColors.IsValueCreated;
+
+            FriendsList.ItemsSource = Global.Data.Friends.Value.Take(3);
+            NamedColorsList.ItemsSource = Global.Data.NamedColors.Value.Take(3);
         }
         protected override void OnNavigatedTo(NavigatedToEventArgs args)
         {

@@ -21,6 +21,20 @@
                 <Label x:Name ="prefMessage"/>
                 <Label x:Name ="prefTime"/>
             </StackLayout>
+                        <ListView x:Name="FriendsList" Margin="10" Header="FriendsList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding FullName}" Detail="{Binding Birthday}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="NamedColorsList" Margin="10" Header="NamedColorsList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding FriendlyName}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </VerticalStackLayout>
     </ScrollView>
 
