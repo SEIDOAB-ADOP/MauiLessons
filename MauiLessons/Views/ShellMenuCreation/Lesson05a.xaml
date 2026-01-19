@@ -4,8 +4,8 @@
  			 xmlns:viewmodels="clr-namespace:MauiLessons.ViewModels"
              x:Class="MauiLessons.Views.Lesson05a"
              Padding="5,0"
-             Title="Lesson 6">
-    <VerticalStackLayout>
+             Title="Lesson 5">
+    <StackLayout>
         <ListView ItemsSource="{x:Static viewmodels:Lesson05aViewModel.All}"
 			  ItemSelected="OnListViewItemSelected">
             <ListView.ItemTemplate>
@@ -15,5 +15,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </VerticalStackLayout>
+    </StackLayout>
 </ContentPage>

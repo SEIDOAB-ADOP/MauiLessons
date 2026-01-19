@@ -31,16 +31,10 @@
     </FlyoutItem>
     <FlyoutItem x:Name="flyLesson05" Title="Lesson 5" Route="lesson5">
         <Tab Title="Hierarchial navigation">
-        <ShellContent
-                Title="Hierarchial navigation"
-                ContentTemplate="{DataTemplate views:Lesson05a}"
-                Route="hierachial1" />
-        </Tab>
-        <Tab Title="Hierarchial navigation">
             <ShellContent
                 Title="Hierarchial navigation"
                 ContentTemplate="{DataTemplate views:Lesson05a}"
-                Route="hierachial2" />
+                Route="hierachial1" />
         </Tab>
     </FlyoutItem>
     <FlyoutItem x:Name="flyLesson06" Title="Lesson 6" Route="lesson6">
