@@ -2,7 +2,7 @@ namespace MauiLessons.Views.Lesson06;
 
 public partial class ActivityProgressPage : ContentPage
 {
-    bool isTaskRunning;
+    bool isTaskRunning = false;
     float progress = 0f;
     
     public ActivityProgressPage()

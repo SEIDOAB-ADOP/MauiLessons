@@ -12,14 +12,14 @@ namespace MauiLessons.ViewModels
         string _message;
         public string Message
         {
-            set => Set<string>(ref _message, value, "Message");
+            set => Set<string>(ref _message, value);
             get => _message;
         }
 
         DateTime _creation;
         public DateTime Creation
         {
-            set => Set<DateTime>(ref _creation, value, "Creation");
+            set => Set<DateTime>(ref _creation, value);
             get => _creation;
         }
 

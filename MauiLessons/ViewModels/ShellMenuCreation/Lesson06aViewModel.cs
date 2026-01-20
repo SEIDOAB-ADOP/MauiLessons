@@ -26,7 +26,10 @@ namespace MauiLessons.ViewModels
             All = new List<Lesson06aViewModel>
             {
                 new Lesson06aViewModel(typeof(ActivityProgressPage), "ActivityIndicator and ProgressBar",
-                        "Show usage of Activity and Progress indicators"),
+                        "Activity and Progress indicators"),
+
+                new Lesson06aViewModel(typeof(ActivityProgressPage2), "Usage ProgressBar",
+                        "Show usage of Progress indicators"),
             };
 
             foreach (var item in All)

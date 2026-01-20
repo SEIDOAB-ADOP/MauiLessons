@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiLessons.Views.Lesson06.ActivityProgressPage"
+             x:Class="MauiLessons.Views.Lesson06.ActivityProgressPage2"
              Title="ActivityIndicator and ProgressBar Demos">
     <ScrollView>
         <VerticalStackLayout>
+            <Label Text="{Binding Message}"
+                   FontSize="25"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,20,0,20"/>
             <StackLayout HeightRequest="200">
                 <ProgressBar x:Name="defaultProgressBar"
                          WidthRequest="500"
@@ -15,27 +19,10 @@
                          ProgressColor="Orange"
                          VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Fill" Scale="2"/>
-                <Button Text="Click to Progress"
+                <Button Text="Click to Calculate"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="CenterAndExpand"
                         Clicked="OnButtonClicked" />
-            </StackLayout>
-            <StackLayout HeightRequest="500">
-                <ActivityIndicator x:Name="defaultActivityIndicator"
-                               VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Fill" Scale="2"/>
-                <ActivityIndicator x:Name="styledActivityIndicator"
-                               Color="Orange"
-                               VerticalOptions="CenterAndExpand"
-                               HorizontalOptions="Fill" Scale="2"/>
-                <Label x:Name="runningStatusLabel"
-                   Text="All tasks are completed!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-                <Button Text="Toggle task status"
-                    Clicked="OnButtonClicked1"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
