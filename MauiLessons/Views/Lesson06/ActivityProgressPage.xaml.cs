@@ -4,10 +4,15 @@ public partial class ActivityProgressPage : ContentPage
 {
     bool isTaskRunning = false;
     float progress = 0f;
-    
+
+    public string ActivityText { get; set; } = "All tasks complete!";
+
+
     public ActivityProgressPage()
 	{
 		InitializeComponent();
+        BindingContext = this;
+
         UpdateUiState();
     }
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
@@ -42,7 +47,9 @@ public partial class ActivityProgressPage : ContentPage
 
     void UpdateUiState()
     {
-        runningStatusLabel.Text = isTaskRunning ? "A task is in progress." : "All tasks complete!";
+        ActivityText = isTaskRunning ? "A task is in progress." : "All tasks complete!";
+        OnPropertyChanged(nameof(ActivityText));
+
         defaultActivityIndicator.IsRunning = isTaskRunning;
         styledActivityIndicator.IsRunning = isTaskRunning;
     }

@@ -28,8 +28,8 @@
                                Color="Orange"
                                VerticalOptions="CenterAndExpand"
                                HorizontalOptions="Fill" Scale="2"/>
-                <Label x:Name="runningStatusLabel"
-                   Text="All tasks are completed!"
+                <Label
+                   Text="{Binding ActivityText}"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
                 <Button Text="Toggle task status"

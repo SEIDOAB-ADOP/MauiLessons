@@ -30,14 +30,28 @@ public partial class ActivityProgressPage2 : ContentPage
         Title += $"   ({Shell.Current.CurrentState.Location.ToString()})";
     }
 
-    async void OnButtonClicked(object sender, EventArgs e)
+    void OnButtonClicked(object sender, EventArgs e)
     {
         Message = "Calculating prime numbers...";
         OnPropertyChanged(nameof(Message));
 
-        var result = await _service.GetPrimeBatchCountsAsync(20, _progressReporter);
+        /*
+        IProgress<float> onProgressReporting = _progressReporter;
+
+
+        await Task.Run(() =>
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Task.Delay(50).Wait();
+                onProgressReporting.Report(i / 100f);
+            }
+        });
+        */
+        var result = _service.GetPrimeBatchCounts(20, _progressReporter);
 
         Message = $"Calculated {result.Sum(b => b.NrPrimes)} prime numbers in {result.Count} batches.";
+        //Message = "Done";
         OnPropertyChanged(nameof(Message));
     }
 }
