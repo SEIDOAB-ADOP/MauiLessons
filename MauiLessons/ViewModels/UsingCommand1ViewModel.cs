@@ -38,6 +38,10 @@ namespace MauiLessons.ViewModels
             Creation = DateTime.Now;
 
             rnd = new Random();
+
+            //public Command(Action execute);
+            //public Command(Action execute, Func<bool> canExecute)
+
             _changeValueCommand = new Command<string>(OnChangeValues);
         }
 
