@@ -4,9 +4,6 @@
              xmlns:local="clr-namespace:MauiLessons.ViewModels"
              x:Class="MauiLessons.Views.Lesson06.DecimalKeypadPage"
              Title="Decimal Keyboard">
-    <ContentPage.BindingContext>
-        <local:DecimalKeypadViewModel />
-    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="FontSize" Value="32" />

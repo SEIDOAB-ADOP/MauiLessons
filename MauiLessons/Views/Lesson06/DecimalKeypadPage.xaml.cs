@@ -5,7 +5,8 @@ public partial class DecimalKeypadPage : ContentPage
 	public DecimalKeypadPage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new ViewModels.DecimalKeypadViewModel();
+    }
     protected override void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
